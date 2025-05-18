@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locations - Vishal Mega Mart Guard Recruitment</title>
+  
+  <style>
+    /* Base & reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fb;
+      color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#5381d6;
+      padding: 0 30px;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f0a500;
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #222;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Page Header */
+    header.page-header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: white;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      margin-bottom: 40px;
+    }
+    header.page-header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #222;
+      font-weight: 700;
+    }
+    header.page-header p {
+      color: #555;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    /* Locations Container */
+    .location-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    /* Individual Location Card */
+    .location-card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .location-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+    }
+
+    /* Location Icon */
+    .location-icon {
+      font-size: 48px;
+      color: #f0a500;
+      margin-bottom: 18px;
+    }
+
+    /* City Name */
+    .city-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    /* Location Details */
+    .city-details {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.4;
+      max-width: 280px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo1.jpeg" alt="Vishal Mega Mart Logo" />
+      Vishal Mega Mart
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="salary.html">Salary</a></li>
+      <li><a href="location.html" class="active">Location</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Job Locations in Delhi NCR</h1>
+    <p>Vishal Mega Mart Guard vacancies available in these major cities.</p>
+  </header>
+
+  <!-- Locations Section -->
+  <section class="location-container">
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">New Delhi</h2>
+      <p class="city-details">The heart of the capital city with numerous retail outlets.</p>
+    </article>
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">Gurgaon (Gurugram)</h2>
+      <p class="city-details">A rapidly growing business hub with many commercial areas.</p>
+    </article>
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">Noida</h2>
+      <p class="city-details">Known for its urban development and retail expansions.</p>
+    </article>
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">Greater Noida</h2>
+      <p class="city-details">Industrial city with expanding retail presence.</p>
+    </article>
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">Ghaziabad</h2>
+      <p class="city-details">A key industrial and residential area with many stores.</p>
+    </article>
+    <article class="location-card">
+      <span class="material-icons location-icon">location_city</span>
+      <h2 class="city-name">Meerut</h2>
+      <p class="city-details">Emerging city with growing retail demand.</p>
+    </article>
+  </section>
+
+  <footer>
+    &copy; 2025 Vishal Mega Mart. All rights reserved.
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eligibility Checker - Vishal Guard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #222;
+    }
+
+    nav {
+      background-color: 
+      #5881d6;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #006064;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00796b;
+      box-shadow: 0 0 8px rgba(0, 121, 107, 0.3);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #00796b;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    #eligibility-result {
+      margin-top: 30px;
+      font-size: 18px;
+      transition: 0.3s;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .eligible {
+      background-color: #e0f2f1;
+      color: #00695c;
+      font-size: 20px;
+    }
+
+    .not-eligible {
+      background-color: #ffebee;
+      color: #c62828;
+      font-size: 18px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>🏢 Vishal Mega Mart - Guard Eligibility</nav>
+
+  <div class="container">
+    <h2>👮‍♂️ Check if You're Fit for Duty!</h2>
+    <form onsubmit="checkEligibility(event)">
+      <label for="height">📏 Height (in cm):</label>
+      <input type="number" id="height" required>
+
+      <label for="weight">⚖️ Weight (in kg):</label>
+      <input type="number" id="weight" required>
+
+      <button type="submit">Check Eligibility ✅</button>
+    </form>
+
+    <p id="eligibility-result"></p>
+  </div>
+
+  <script>
+    function checkEligibility(e) {
+      e.preventDefault();
+      const height = parseInt(document.getElementById('height').value);
+      const weight = parseInt(document.getElementById('weight').value);
+      const result = document.getElementById('eligibility-result');
+
+      if (height >= 160 && weight >= 50) {
+        result.className = "eligible";
+        result.textContent = "✅ Great! You're eligible to be a Vishal Guard. 🛡️💪";
+      } else {
+        result.className = "not-eligible";
+        result.textContent = "❌ Oops! You must be at least 160cm tall and 50kg in weight. 🚫";
+      }
+    }
+  </script>
+</body>
+</html>

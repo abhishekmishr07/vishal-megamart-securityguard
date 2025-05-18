@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guard Aptitude Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f9ff, #ffffff);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color:#5381d6;
+      color: white;
+      padding: 15px 30px;
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease;
+    }
+
+    h2 {
+      color: #00796b;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 2px solid #ccc;
+      font-size: 16px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 25px;
+    }
+
+    input[type="number"]:focus {
+      border-color: #26a69a;
+      outline: none;
+      box-shadow: 0 0 8px rgba(38, 166, 154, 0.4);
+    }
+
+    button {
+      width: 100%;
+      background-color: #00796b;
+      color: white;
+      font-size: 18px;
+      padding: 14px;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00796b;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      animation: slideUp 0.5s ease forwards;
+      text-align: center;
+      max-width: 80vw;
+      z-index: 9999;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 20px;
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>🛡️ Vishal Mega Mart Guard Aptitude Test</nav>
+
+  <div class="container">
+    <h2>🧠 Math & Fun Quiz!</h2>
+    <form id="quizForm" onsubmit="calculateScore(event)">
+      <label>1. What is 2 + 2? 🤓
+        <input type="number" id="q1" required />
+      </label>
+
+      <label>2. If a guard’s hat weighs 3kg and his boots 2kg, what’s the total? 👢🎩
+        <input type="number" id="q2" required />
+      </label>
+
+      <label>3. How many days in a week? 📅
+        <input type="number" id="q3" required />
+      </label>
+
+      <label>4. Which is heavier: 1kg of feathers or 1kg of bricks? 🪶🧱
+        <input type="number" id="q4" placeholder="Answer with 1" required />
+      </label>
+
+      <label>5. What sound does a guard make when surprised? (1 for “Whoa!”, 2 for “Oh no!”, 3 for “Huh?”) 😲
+        <input type="number" id="q5" required />
+      </label>
+
+      <button type="submit">Submit Answers</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    function calculateScore(e) {
+      e.preventDefault();
+
+      // Answers keys:
+      // q1: 4
+      // q2: 5 (3+2)
+      // q3: 7
+      // q4: 1 (Both weigh same, trick question!)
+      // q5: 1 (Correct funny answer is "Whoa!" = 1)
+
+      let score = 0;
+
+      const answers = {
+        q1: 4,
+        q2: 5,
+        q3: 7,
+        q4: 1,
+        q5: 1
+      };
+
+      for (const [id, correctAnswer] of Object.entries(answers)) {
+        const val = parseInt(document.getElementById(id).value);
+        if (val === correctAnswer) score++;
+      }
+
+      localStorage.setItem('guardScore', score);
+
+      // Assign a funny rank based on score
+      let rank;
+      switch(score) {
+        case 5: rank = "🛡️ Supreme Guard Champion!";
+          break;
+        case 4: rank = "🕵️‍♂️ Sharp-Eyed Protector";
+          break;
+        case 3: rank = "👮 Reliable Watchman";
+          break;
+        case 2: rank = "🤡 Needs Some Practice";
+          break;
+        case 1: rank = "🙈 Better Luck Next Time";
+          break;
+        default: rank = "💤 Did You Fall Asleep?";
+      }
+
+      // Show toast with funny rank
+      const toast = document.getElementById('toast');
+      toast.textContent = `Your Score: ${score}/5 — ${rank}`;
+      toast.style.display = 'block';
+
+      // After 3 seconds redirect to result page
+      setTimeout(() => {
+        window.location.href = 'result.html';
+      }, 3500);
+    }
+  </script>
+
+</body>
+</html>

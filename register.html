@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Vishal Mega Mart Guard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #d7fdfc, #ffffff);
+      color: #333;
+    }
+
+    nav {
+      background-color:#5381d6;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: bounceIn 0.6s ease;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      color: #00796b;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #26a69a;
+      outline: none;
+      box-shadow: 0 0 10px rgba(38, 166, 154, 0.3);
+    }
+
+    button {
+      padding: 14px 28px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00796b;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      font-weight: bold;
+      animation: slideUp 0.5s ease forwards;
+      display: none;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 20px;
+        padding: 30px 20px;
+      }
+
+      nav {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>🏢 Vishal Mega Mart - Guard Registration</nav>
+
+  <div class="container">
+    <h2>🚨 Join the Guard Force Today!</h2>
+    <form onsubmit="return handleSubmit()">
+      <input type="text" placeholder="👤 Full Name" required>
+      <input type="email" placeholder="📧 Email Address" required>
+      <input type="tel" placeholder="📱 Phone Number" required>
+      <select required>
+        <option value="">🏙️ Select City</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Lucknow</option>
+        <option>Jaipur</option>
+        <option>Patna</option>
+      </select>
+      <button type="submit">🚀 Proceed to Test</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast">✅ Registration Complete! Redirecting...</div>
+
+  <script>
+    function handleSubmit() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => {
+        window.location.href = 'test.html';
+      }, 2000);
+      return false; // prevent default form submit
+    }
+  </script>
+
+</body>
+</html>

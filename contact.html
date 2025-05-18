@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Vishal Mega Mart Guard Recruitment</title>
+  <style>
+    body {
+      margin:0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fb;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#5381d6;
+      padding: 0 30px;
+      height: 60px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo img {
+      height: 35px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: 500;
+      padding: 8px 0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f0a500;
+    }
+
+    /* Main Section */
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .content-flex {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      flex: 1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-width: 280px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .developer {
+      text-align: center;
+    }
+
+    .dev-name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .dev-role {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .dev-contact {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .content-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo1.jpeg" alt="Vishal Mega Mart Logo" />
+      Vishal Mega Mart
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="salary.html">Salary</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="container">
+    <div class="intro">
+      <h1>Contact & Developer Info</h1>
+      <p>Learn more about Vishal Mega Mart and get in touch with the developer.</p>
+    </div>
+
+    <div class="content-flex">
+      <!-- Vishal Mega Mart Info -->
+      <div class="card">
+        <h2>About Vishal Mega Mart</h2>
+        <p>
+          Vishal Mega Mart is India’s fastest-growing retail chain with a commitment to providing quality products at affordable prices. We value safety and service, and our guards play a crucial role in our everyday operations. Be a part of our mission to protect and serve customers across the country.
+        </p>
+      </div>
+
+      <!-- Developer Info -->
+      <div class="card developer">
+        <h2>Developer</h2>
+        <div class="dev-name">Abhishek Mishra</div>
+        <div class="dev-role">Frontend Developer & UI Designer</div>
+        <div class="dev-contact">
+          Email: am8176033@gmail.com<br/>
+          Phone: +91-956535xx
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Vishal Mega Mart. Built with ❤️ by Abhishek Mishra.
+  </footer>
+
+</body>
+</html>

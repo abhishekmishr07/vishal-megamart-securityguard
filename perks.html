@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perks - Vishal Mega Mart Guard Recruitment</title>
+  <style>
+    /* Reset & base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fb;
+      color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#5381d6;
+      padding: 0 30px;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #f0a500;
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #222;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Page Header */
+    header.page-header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: white;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      margin-bottom: 40px;
+    }
+    header.page-header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #222;
+      font-weight: 700;
+    }
+    header.page-header p {
+      color: #555;
+      font-size: 18px;
+      margin-top: 8px;
+    }
+
+    /* Perks Container */
+    .perks-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    /* Individual Perk Card */
+    .perk-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .perk-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+    }
+
+    /* Perk Icon */
+    .perk-icon {
+      font-size: 48px;
+      color: #f0a500;
+      margin-bottom: 20px;
+    }
+
+    /* Perk Title */
+    .perk-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    /* Perk Description */
+    .perk-desc {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+  <!-- Icons from Google Fonts Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo1.jpeg" alt="Vishal Mega Mart Logo" />
+      Vishal Mega Mart
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="perks.html" class="active">Perks</a></li>
+      <li><a href="salary.html">Salary</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Why Join Vishal Mega Mart as a Guard?</h1>
+    <p>Enjoy these great perks and benefits designed for our security team.</p>
+  </header>
+
+  <!-- Perks Section -->
+  <section class="perks-container">
+    <article class="perk-card">
+      <span class="material-icons perk-icon">security</span>
+      <h2 class="perk-title">Job Security</h2>
+      <p class="perk-desc">Stable employment with Vishal Mega Mart’s trusted brand, ensuring long-term career growth.</p>
+    </article>
+    <article class="perk-card">
+      <span class="material-icons perk-icon">schedule</span>
+      <h2 class="perk-title">Flexible Shifts</h2>
+      <p class="perk-desc">Multiple shift options available to fit your lifestyle and personal commitments.</p>
+    </article>
+    <article class="perk-card">
+      <span class="material-icons perk-icon">health_and_safety</span>
+      <h2 class="perk-title">Health & Safety</h2>
+      <p class="perk-desc">Comprehensive safety training and access to health benefits to keep you protected.</p>
+    </article>
+    <article class="perk-card">
+      <span class="material-icons perk-icon">monetization_on</span>
+      <h2 class="perk-title">Competitive Pay</h2>
+      <p class="perk-desc">Attractive salary packages that reward your dedication and performance.</p>
+    </article>
+    <article class="perk-card">
+      <span class="material-icons perk-icon">people</span>
+      <h2 class="perk-title">Team Environment</h2>
+      <p class="perk-desc">Work alongside a supportive and friendly team focused on security and safety.</p>
+    </article>
+    <article class="perk-card">
+      <span class="material-icons perk-icon">emoji_events</span>
+      <h2 class="perk-title">Recognition & Awards</h2>
+      <p class="perk-desc">Get acknowledged for outstanding work with regular rewards and incentives.</p>
+    </article>
+  </section>
+
+  <footer>
+    &copy; 2025 Vishal Mega Mart. All rights reserved.
+  </footer>
+
+  <script>
+    // Hamburger toggle for mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

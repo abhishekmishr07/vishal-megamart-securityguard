@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vishal Mega Mart Guard Recruitment</title>
+  <style>
+    /* Reset & base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:white;
+      color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar container */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #5381d6;
+      padding: 0 30px;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+       gap: 10px;
+      color: white;
+      font-weight: 700;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #7d4215; /* golden highlight */
+    }
+
+    /* Hamburger for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    /* Mobile menu - initially hidden */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #222;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Your existing hero styles */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 80px;
+      min-height: 80vh;
+      background: white;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #192911;
+    }
+
+    .subtext {
+      font-size: 18px;
+      color: #553e3e;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      text-decoration: none;
+      border: 2px solid #bb3737;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background-color: #222;
+      color: white;
+      border-color: #222;
+    }
+
+    .btn.primary:hover {
+      background-color: #a82b2b;
+    }
+
+    .btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    .hero-image img {
+      width: 400px;
+      max-width: 100%;
+      border-radius: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    /* Responsive hero */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        min-height: auto;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-image {
+        margin-top: 30px;
+      }
+      .hero-image img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo1.jpeg" alt="Vishal Mega Mart Logo" />
+      Vishal Mega Mart
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="perks.html">Perks</a></li>
+      <li><a href="salary.html">Salary</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="vacancy.html">Vacancies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Join the Force. Be the Shield.</h1>
+      <p class="subtext">
+        "One Dream, One Duty – Vishal Mega Mart Mein Suraksha"<br/>
+        "एक सपना, एक जीवन - विशाल मेगा मार्ट गार्ड की छाया"
+      </p>
+      <div class="cta-buttons">
+        <a href="register.html" class="btn primary">Apply Now</a>
+        <a href="eligibility.html" class="btn">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="guard.png" alt="Illustration of a security guard" />
+    </div>
+  </header>
+
+  <script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
